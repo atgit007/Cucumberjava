@@ -13,10 +13,6 @@ pipeline {
             }
         }
 
-        stage('Results') {
-            steps {
-                junit 'target/cucumber-reports/*.xml'
-            }
-        }
+
     }
 }
