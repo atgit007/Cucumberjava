@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                echo "hello world"
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean test'
+            }
+        }
+
+        stage('Results') {
+            steps {
+                junit 'target/cucumber-reports/*.xml'
+            }
+        }
+    }
+}
