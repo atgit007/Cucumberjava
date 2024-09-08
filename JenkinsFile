@@ -13,6 +13,14 @@ pipeline {
             }
         }
 
+        stage('Smoketest') {
+                    steps {
+                       // Pass command line arguments to Maven using a bat step in Windows
+                       bat 'mvn test -Dcucumber.options="--tags @smoketest"'
+                    }
+        }
+
+
 
     }
 }
