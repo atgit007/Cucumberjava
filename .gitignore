@@ -1,1 +1,2 @@
-/target/cucumber-report-html/
+/target/*
+/.idea/*
